@@ -10,7 +10,7 @@ from sqlalchemy import create_engine, ForeignKey
 from sqlalchemy import Column, Date, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine('sqlite:///database/goodhabit.db', echo=True)
+engine = create_engine('sqlite:///goodhabit.db', echo=True)
 Base = declarative_base()
 
 
