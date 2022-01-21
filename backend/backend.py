@@ -6,6 +6,28 @@ from flask_migrate import Migrate
 import os
 import numpy as np
 import logging
+from sqlalchemy import create_engine, ForeignKey
+from sqlalchemy import Column, Date, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+
+engine = create_engine('sqlite:///database/goodhabit.db', echo=True)
+Base = declarative_base()
+
+
+class School(Base):
+
+    __tablename__ = "logins"
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)  
+    password = Column(String)
+
+    def __init__(self, name):
+
+        self.name = name    
+
+
+Base.metadata.create_all(engine)
 
 api = Api()
 migrate = Migrate()
