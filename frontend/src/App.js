@@ -1,14 +1,14 @@
 import './App.css';
-import SideBar from './components/SideBar';
-import Header from './components/Header';
-import MainPage from './components/MainPage';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from "./pages/HomePage";
+import Habits from "./pages/Habits";
 
 function App() {
   return (
-    <div>
-      <SideBar />
-      <MainPage />
-    </div>
+      <Routes> {/* The Switch decides which component to show based on the current URL.*/}
+          <Route exact path='/' component={HomePage}></Route>
+          <Route exact path='/Habits' component={Habits}></Route>
+      </Routes>
   );
 }
 
